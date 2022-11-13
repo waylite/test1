@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="icon" href="icon.ico">
+
+  </head>
+  <body>
+
+<div style="width:100vw;height:200vh;background-color:blue">
+
+</div>
+  <!-- <div class="program">
+    <div class="script">
+      <script src="plugins.js"></script>
+      <script src="plugins/1.js"></script>
+      <script src="plugins/2.js"></script>
+      <script src="plugins/chooser.js"></script>
+      <script src="plugins/tag adder.js"></script>
+    </div>
+    <div class="plugins"></div>
+  </div> -->
+  <script src="plugins.js"></script>
+
+  <input type="file" webkitdirectory directory multiple/>
+
+  <textarea id="textbox">Type something here</textarea> <button id="create">Create file</button>
+  <a download="info.html" id="downloadlink" style="display: none">Download</a>
+
+<script>
+
+  (function () {
+  var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain'});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+  };
+
+
+  var create = document.getElementById('create'),
+    textbox = document.getElementById('textbox');
+
+  create.addEventListener('click', function () {
+    download()
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(textbox.value);
+    link.style.display = 'block';
+  }, false);
+  })();
+
+  function download() {
+    a = document.querySelector("*")
+    document.querySelector(".program").remove()
+    document.querySelector("textarea").value = a.innerHTML
+  }
+
+</script>
+
+
+
+  </body>
+</html>
