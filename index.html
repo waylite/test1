@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- <script  src="plugins.js"></script> -->
+<!--
+    <div class="block" style="width:100px;height:100px;overflow:scroll;position:absolute;background-color:green;overflow:auto;resize:both;">
+      <div class="wrapper" style="width:100%;height:25px;background-color:yellow;position:absolute">
+      asdsa</div>
+      <div class="adas" style="width:100%;height:calc(100% - 25px);background-color:red;position:absolute;top:25px;overflow:auto;">
+aasdasdasdasdasdasdasd asd asd sad asd as dsad asd sad sa das das dasd as das das dsad sad asd as das das dasd as asd as d
+      </div>
+    </div> -->
+
+    <button type="button" name="button" onclick="ffff()">start</button>
+
+<!-- <input type="number" name="" value="">
+<select onchange="fff()">
+  <option>left</option>
+  <option>center</option>
+  <option>right</option>
+  <option>justify</option>
+</select>
+<p id=ppp draggable="true" style="color:red;">dassadsadasd asd asd asd as das dfadfgdg rghe tfsadf adf ewdf  fdsf f wer fwae gehgwaeg wagf dawf weewa fawf adfaf dswef wer twqg a fawef ew w fewf aEdasdasdasd</p>
+
+<button onclick="$('body').requestFullscreen();">start</button> -->
+
+<script>
+
+const source = document.querySelector("#ppp");
+source.addEventListener("dragstart", (ev) => {
+console.log("dragStart");
+ev.dataTransfer.clearData();
+ev.dataTransfer.setData("text/plain", "hello");
+});
+
+
+  function fff() {
+    $("#ppp").style.textAlign = $("select").value
+  }
+
+  // var newWin;
+      function ffff()
+      {
+
+        // newWin=window.open('3.html', Date(),'fullscreen=yes');
+       newWin=window.open('https://waylite.github.io/test1/3.html', "q",'width=500,height=500');
+
+
+      //  document.onmousedown=focusPopup;
+      //  document.onkeyup=focusPopup;
+      //  document.onmousemove=focusPopup;
+      // }
+      // function focusPopup(){
+      //   if(!newWin.closed){
+      //     newWin.focus();
+      //   }
+      }
+
+  // function ffff() {
+  //   // about:_blank
+  //   var tab = window.open("about:Constructor", 'aaaa', "height=570,width=520,scrollbars=yes,status=no');");
+  //   script = document.createElement("script")
+  //   script.src = "https://waylite.github.io/test1/plugins.js"
+  //   tab.document.body.append(script);
+  //   tab.document.querySelector("body").onblur = "this.foucs()"
+  //   tab.document.close();
+  // }
+
+
+
+  a = document.querySelector(".block")
+  a.style.left = "0px"
+  a.style.top = "0px"
+  function abc(e) {
+    a.style.left = parseInt(a.style.left) + e.movementX + "px"
+    a.style.top = parseInt(a.style.top) + e.movementY + "px"
+  }
+
+  a.addEventListener("mousedown", (e) => {
+    if (e.target.className.search("wrapper") != -1) {
+      document.body.addEventListener("mousemove", abc)
+    }
+
+  })
+  document.body.addEventListener("mouseup", (e) => {
+    document.body.removeEventListener("mousemove", abc)
+  })
+
+
+
+
+</script>
+
+  </body>
+</html>
