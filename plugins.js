@@ -50,7 +50,7 @@ let a;
 function load_plugin(name) {
   if ($(`.plugin.${name.replaceAll(" ", "_")}`) == null) {
     let script = document.createElement('script');
-    script.src = `https://asdafasdgfdas.netlify.app/plugins/${name}.js`
+    script.src = `https://waylite.github.io/test1/plugins/${name}.js`
     // script.src = `plugins/${name}.js`
     name = name.replaceAll(" ", "_")
     //script.className = name
