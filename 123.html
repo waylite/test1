@@ -17,7 +17,7 @@ await MathJax.typesetPromise([mathDiv])
 }
 function generate() {
     let el = document.createElement("p")
-    el.innerText = "\\({${arguments[0]} \\over ${arguments[1]}} ± {${arguments[2]} \\over ${arguments[3]}} = {(${arguments[0]*arguments[3]} ± bc) \\over bd}\\)"
+    el.innerText = `\\({${arguments[0]} \\over ${arguments[1]}} ± {${arguments[2]} \\over ${arguments[3]}} = {(${arguments[0]*arguments[3]} ± bc) \\over bd}\\)`
     //el.innerText = "\\(a^2\\)"
     document.body.append(el)
     update(el)
