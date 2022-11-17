@@ -12,10 +12,11 @@ await MathJax.typesetPromise([mathDiv])
 }
 function generate() {
     let el = document.createElement("p")
-    el.innerText = "\\({a \\over b} ± {c \\over d} = {(ad ± bc) \\over bd}\\)"
+    el.innerText = `\\({${arguments[0]} \\over ${arguments[1]}} ± {${arguments[2]} \\over ${arguments[3]}} = {(${arguments[0]*arguments[3]} ± bc) \\over bd}\\)`
     document.body.append(el)
     update(el)
 }
+generate(1,2,3,4)
         </script>
     </head>
     <body>
