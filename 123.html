@@ -2,9 +2,23 @@
 <html>
     <head>
         <title>Page Title</title>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+async function update(el) {
+const mathDiv = el
+await MathJax.startup.promise
+MathJax.typesetClear([mathDiv])
+await MathJax.typesetPromise([mathDiv])
+}
+function generate() {
+    let el = document.createElement("p")
+    el.innerText = "\\({a \\over b} ± {c \\over d} = {(ad ± bc) \\over bd}\\)"
+    document.body.append(el)
+    update(el)
+}
+        </script>
     </head>
     <body>
-        <p>\(a^2 + b^2\)</p>
+        
     </body>
 </html>
